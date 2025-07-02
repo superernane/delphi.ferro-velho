@@ -1,0 +1,58 @@
+if q_Pecas.Locate('Id_pecas',q_Vendas.FieldByName('id_Pecas').AsInteger,[]) then
+
+
+if q_VendasID_PECAS.AsInteger  > 0 then
+       begin
+           db_data.Text := DateToStr(now);
+           q_VendasQTD.AsFloat:=1;
+
+           // PEGA O VALOR DE PRODUTO
+           q_VendasV_VENDAS.AsFloat :=
+           q_Vendas.FieldByName('v_vendas').AsFloat;
+
+           // SOMA O VALOR
+           q_VendasTOTAL.AsFloat := (q_VendasQTD.AsFloat) *
+           (q_VendasV_VENDAS.AsFloat);
+           q_Vendas.Post;
+           bt_item.Enabled := true;
+       end
+       else
+          MessageDlg('Produtos não encontrado.',mtError,[mbOK],0);
+          q_Vendas.Cancel;
+          bt_item.Enabled :=true;
+
+
+
+
+
+
+select a.id_vendas,
+       b.id_pecas,
+       c.id_carros,
+       a.Descricao,
+       a.Qtd,
+       a.v_Vendas,
+       a.Cadastro,
+       c.Numero,
+       a.total 
+ from vendas a,pecas b, carros c
+ where a.id_vendas = b.id_pecas 
+ and c.numero = a.numero 
+ order by id_vendas   
+
+
+with query2 do
+begin
+close;
+sql.Text:=' select nome, sum(Valor) as total from historico '+
+' where Data between :pdate1 and :pdate2 '+
+' GROUP BY NOME '; //vc precisa declarar o campo agregado no sum
+Params[0].AsDate := datetimepicker1.DateTime;
+Params[1].AsDate := datetimepicker2.DateTime;
+open;
+
+
+[SUM(<frxDBDataset1."V_VENDAS">,MasterData1)]
+
+[MIN(<FXD_CARROS."VALOR">,MasterData1) - SUM(<FXD_VENDAS."V_VENDAS">,MasterData1)]
+[MIN(<FXD_CARROS."VALOR",MasterData1>-sum(<FXD_VENDAS."V_VENDAS">,MasterData1)]

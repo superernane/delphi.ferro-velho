@@ -1,0 +1,117 @@
+ procedure Tfrm_vendas.ed_CodigoKeyPress(Sender: TObject; var Key: Char);
+begin
+       if key=#13 then
+     begin
+       key:=#0;
+       Perform(WM_NEXTDLGCTL,0,0);
+       q_Pecas.Close;
+       q_Pecas.SQL.Clear;
+       q_Pecas.SQL.Add('select * from pecas');
+       q_Pecas.SQL.Add('where id_pecas =:pCodigo');
+       q_Pecas.ParamByName('pCodigo').AsString := ed_Codigo.Text;
+       q_Pecas.Open;
+
+       // dados das pecas
+       ed_Codigo.Text    := q_PecasID_PECAS.Text;
+       ed_descricao.Text := q_PecasDESCRICAO.Text;
+       ed_quant.Text     := q_PecasQUANTIDADE.Text;
+       ed_Valor.Text     := q_PecasV_VENDAS.Text;
+       ed_quant.SetFocus;
+
+
+
+     end;
+end;
+
+procedure Tfrm_vendas.ed_numeroKeyPress(Sender: TObject; var Key: Char);
+begin
+     if key=#13 then
+     begin
+       key:=#0;
+       Perform(WM_NEXTDLGCTL,0,0);
+         q_Carros.Close;
+         q_Carros.SQL.Clear;
+         q_Carros.SQL.Add('select * from carros');
+         q_Carros.SQL.Add('where numero =:pNumero');
+         q_Carros.ParamByName('pNumero').AsString := ed_numero.Text;
+         q_Carros.Open;
+
+         /// preenchimento dos edits
+
+         //frm_vendas.ed_numero.Text := q_Pesq_carrosNUMERO.Text;
+         ed_nome.Text   := q_CarrosNOME.Text;
+         ed_ano.Text    := q_CarrosMODELO.Text;
+         ed_cor.Text    := q_CarrosCOR.Text;
+         ed_cambio.Text := q_CarrosCAMBIO.Text;
+     end;
+end;
+
+
+ // dados das pecas
+       frm_vendas.ed_Codigo.Text    := q_pesq_PecasID_PECAS.Text;
+       frm_vendas.ed_descricao.Text := q_pesq_PecasDESCRICAO.Text;
+       frm_vendas.ed_quant.Text     := q_pesq_PecasQUANTIDADE.Text;
+       frm_vendas.ed_Valor.Text     := q_pesq_PecasV_VENDAS.Text;
+       frm_vendas.ed_quant.SetFocus;
+       close;
+
+
+procedure Tfrm_vendas.ed_ValorExit(Sender: TObject);
+    var
+       valor : real;
+begin
+    ed_Valor.Text:= FormatFloat('0.00', StrtoFloat(ed_Valor.Text));
+    valor:=strtofloat(ed_Valor.text);
+    ed_data.Text := DateToStr(now);
+
+end;
+
+
+
+      // transferencia de dados
+
+      q_Item_Vendas.Open;
+      q_Item_Vendas.Last;
+      prox := q_Item_VendasID_ITEM_VENDAS.AsInteger + 1;
+      q_Item_Vendas.Append;
+      q_Item_VendasID_ITEM_VENDAS.AsInteger := prox;
+     // q_Item_VendasNUMERO.Text     := ed_numero.Text;
+      q_Item_VendasDESCRICAO.Text  := ed_descricao.Text;
+      q_Item_VendasQUANTIDADE.Text := ed_quant.Text;
+      q_Item_VendasV_VENDAS.Text   := ed_Valor.Text;
+      q_Item_VendasCADASTRO.Text   := ed_data.Text;
+      q_Item_VendasID_PECAS.Text   := ed_Codigo.Text;
+      ed_subtotal.text             := FloatToStr(StrToFloat(ed_quant.Text) * StrToFloat(ed_Valor.Text));
+      q_Item_VendasTOTAL.Text      := ed_subtotal.Text;
+      // Limpeza de dados
+
+
+      ed_descricao.Text := '';
+      ed_quant.Text     := '';
+      ed_Valor.Text     := '';
+      ed_data.Text      := '';
+      ed_Codigo.Text    := '';
+
+
+    end;
+
+procedure Tfrm_vendas.SpeedButton3Click(Sender: TObject);
+var
+   prox : Integer;
+begin
+     q_Vendas.Open;
+     q_Vendas.Last;
+     prox := q_VendasID_VENDAS.AsInteger + 1;
+     q_Vendas.Append;
+     q_VendasID_PECAS.Text   := q_Item_VendasID_PECAS.Text;
+     q_VendasDESCRICAO.Text  := q_Item_VendasDESCRICAO.Text;
+     q_VendasQUANTIDADE.Text := q_Item_VendasQUANTIDADE.Text;
+     q_VendasV_VENDAS.Text   := q_Item_VendasV_VENDAS.Text;
+     q_VendasCADASTRO.Text   := q_Item_VendasCADASTRO.Text;
+     q_VendasNUMERO.Text     := q_Item_VendasNUMERO.Text;
+     q_VendasTOTAL.Text      := q_Item_VendasTOTAL.Text;
+     q_Vendas.Post;
+     q_Item_Vendas.Delete;
+     q_Item_Vendas.Close;
+
+end;
