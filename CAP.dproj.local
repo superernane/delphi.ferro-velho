@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/02/08 14:46:16.000.371,=C:\Users\Lenovo\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/02/08 14:47:56.000.255,C:\CAP\unMenu.pas=C:\Users\Lenovo\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/02/08 14:47:56.000.255,C:\CAP\unMenu.dfm=C:\Users\Lenovo\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2021/02/08 14:48:09.000.040,C:\CAP\CAP.dproj=C:\Users\Lenovo\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2021/02/08 14:53:42.000.391,=C:\CAP\Unit1.pas</Transaction>
+    <Transaction>2021/02/08 14:54:16.000.995,C:\CAP\Unit1.pas=C:\CAP\unCadCarros.pas</Transaction>
+    <Transaction>2021/02/08 14:54:16.000.995,C:\CAP\Unit1.dfm=C:\CAP\unCadCarros.dfm</Transaction>
+    <Transaction>2021/02/08 15:35:19.000.618,=C:\CAP\Unit1.pas</Transaction>
+    <Transaction>2021/02/08 15:41:24.000.536,C:\CAP\Unit1.pas=C:\CAP\unDM.pas</Transaction>
+    <Transaction>2021/02/08 15:41:24.000.536,C:\CAP\Unit1.dfm=C:\CAP\unDM.dfm</Transaction>
+    <Transaction>2021/02/08 18:25:34.000.799,=C:\CAP\Unit1.pas</Transaction>
+    <Transaction>2021/02/08 18:50:09.000.077,C:\CAP\TEST.dfm=C:\CAP\Unit1.dfm</Transaction>
+    <Transaction>2021/02/08 18:50:09.000.077,C:\CAP\TEST.pas=C:\CAP\Unit1.pas</Transaction>
+    <Transaction>2021/02/09 09:27:31.000.041,=C:\CAP\Unit2.pas</Transaction>
+    <Transaction>2021/02/09 09:28:11.000.333,C:\CAP\unCadastro.pas=C:\CAP\Unit2.pas</Transaction>
+    <Transaction>2021/02/09 09:28:11.000.333,C:\CAP\unCadastro.dfm=C:\CAP\Unit2.dfm</Transaction>
+    <Transaction>2021/02/09 21:17:40.000.269,=C:\CAP\Unit1.pas</Transaction>
+    <Transaction>2021/02/09 21:18:03.000.843,C:\CAP\unRelatorios.dfm=C:\CAP\Unit1.dfm</Transaction>
+    <Transaction>2021/02/09 21:18:03.000.843,C:\CAP\unRelatorios.pas=C:\CAP\Unit1.pas</Transaction>
+    <Transaction>2021/02/09 21:18:10.000.879,C:\CAP\unRelatorio.dfm=C:\CAP\unRelatorios.dfm</Transaction>
+    <Transaction>2021/02/09 21:18:10.000.879,C:\CAP\unRelatorio.pas=C:\CAP\unRelatorios.pas</Transaction>
+    <Transaction>2021/02/10 09:35:26.000.435,=C:\CAP\Unit1.pas</Transaction>
+    <Transaction>2021/02/10 09:41:10.000.263,C:\CAP\Unit1.pas=C:\CAP\unLogin.pas</Transaction>
+    <Transaction>2021/02/10 09:41:10.000.263,C:\CAP\Unit1.dfm=C:\CAP\unLogin.dfm</Transaction>
+    <Transaction>2021/02/12 10:51:13.000.979,=C:\CAP\Unit1.pas</Transaction>
+    <Transaction>2021/02/12 10:51:42.000.533,C:\CAP\Unit1.pas=C:\CAP\unCadPecas.pas</Transaction>
+    <Transaction>2021/02/12 10:51:42.000.533,C:\CAP\Unit1.dfm=C:\CAP\unCadPecas.dfm</Transaction>
+    <Transaction>2021/02/12 10:54:29.000.401,=C:\CAP\Unit2.pas</Transaction>
+    <Transaction>2021/02/12 10:54:47.000.628,C:\CAP\Unit2.pas=C:\CAP\unPeças.pas</Transaction>
+    <Transaction>2021/02/12 10:54:47.000.628,C:\CAP\Unit2.dfm=C:\CAP\unPeças.dfm</Transaction>
+    <Transaction>2021/02/12 10:57:04.000.241,C:\CAP\unPeças.dfm=C:\CAP\unPecas.dfm</Transaction>
+    <Transaction>2021/02/12 10:57:04.000.241,C:\CAP\unPeças.pas=C:\CAP\unPecas.pas</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="unCadCarros.pas"/>
+    <File Path="unCadCarros.dfm"/>
+    <File Path="unDM.pas"/>
+    <File Path="unDM.dfm"/>
+    <File Path="unMenu.pas"/>
+    <File Path="unMenu.dfm"/>
+    <File Path="unCadastro.pas"/>
+    <File Path="unCadastro.dfm"/>
+    <File Path="unRelatorio.pas"/>
+    <File Path="unRelatorio.dfm"/>
+    <File Path="unLogin.pas"/>
+    <File Path="unLogin.dfm"/>
+    <File Path="unCadPecas.pas"/>
+    <File Path="unCadPecas.dfm"/>
+    <File Path="unPecas.pas"/>
+    <File Path="unPecas.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>
